@@ -1,0 +1,73 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+
+\usecolortheme{UMW}
+
+% Konfiguracja nagłówka i stopki
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\title[Krótki Tytuł]{Tytuł Prezentacji lub Pracy Dyplomowej}
+\subtitle{Podtytuł prezentacji}
+\author{Imię i Nazwisko}
+\institute{Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu \\ Wydział Lekarski}
+\date{\today}
+
+% Miejsce na logo uczelni
+% Pobierz oficjalny plik z logo UMW i umieść w folderze jako logo_umw.png
+\titlegraphic{
+    %\includegraphics[height=1.5cm]{logo_umw.png}
+}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Spis treści}
+    \tableofcontents
+\end{frame}
+
+\section{Wprowadzenie}
+
+\begin{frame}{Wprowadzenie}
+    \begin{itemize}
+        \item Pierwszy element listy opisujący zagadnienie medyczne/naukowe.
+        \item Drugi element z wyróżnieniem kluczowego pojęcia.
+        \item Trzeci element podsumowujący wstęp.
+    \end{itemize}
+\end{frame}
+
+\section{Metodologia i Bloki}
+
+\begin{frame}{Formatowanie Treści}
+    \begin{block}{Zwykły blok informacyjny}
+        Zawiera standardowe informacje lub definicje naukowe.
+    \end{block}
+
+    \begin{alertblock}{Ważna uwaga / Wynik kluczowy}
+        Blok wyróżniony złotym kolorem UMW do zwrócenia uwagi na krytyczne dane.
+    \end{alertblock}
+
+    \begin{exampleblock}{Przykład}
+        Przykładowy przypadek kliniczny lub zastosowanie metody.
+    \end{exampleblock}
+\end{frame}
+
+\section{Podsumowanie}
+
+\begin{frame}{Podsumowanie}
+    \begin{center}
+        \Large \textbf{Dziękuję za uwagę!}
+        
+        \vspace{1cm}
+        
+        \small kontakt: imie.nazwisko@student.umw.edu.pl
+    \end{center}
+\end{frame}
+
+\end{document}
