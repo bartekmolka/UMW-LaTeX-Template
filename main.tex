@@ -4,22 +4,20 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 
-\usecolortheme{UMW}
+\setbeamersize{text margin left=1.6cm, text margin right=0.8cm}
 
-% Konfiguracja nagłówka i stopki
+\usetheme{UMW}
+
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]
 
-\title[Krótki Tytuł]{Tytuł Prezentacji lub Pracy Dyplomowej}
+\title[Tytuł prezentacji]{Tytuł prezentacji}
 \subtitle{Podtytuł prezentacji}
-\author{Imię i Nazwisko}
-\institute{Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu \\ Wydział Lekarski}
-\date{\today}
+\author[Imię i nazwisko]{Imię i nazwisko autora prezentacji}
+\institute{Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu}
+\date[Data]{Data prezentacji}
 
-% Miejsce na logo uczelni
-% Pobierz oficjalny plik z logo UMW i umieść w folderze jako logo_umw.png
 \titlegraphic{
-    %\includegraphics[height=1.5cm]{logo_umw.png}
+    \includegraphics[height=1.2cm]{logo_umw.png}
 }
 
 \begin{document}
@@ -36,38 +34,22 @@
 
 \begin{frame}{Wprowadzenie}
     \begin{itemize}
-        \item Pierwszy element listy opisujący zagadnienie medyczne/naukowe.
-        \item Drugi element z wyróżnieniem kluczowego pojęcia.
-        \item Trzeci element podsumowujący wstęp.
+        \item Paski pionowe przechodzą czysto od góry do samego dołu slajdu.
+        \item Marginesy zabezpieczają treść slajdu przed nakładaniem się na paski.
+        \item Logo nie nachodzi na żadne elementy ozdobne.
     \end{itemize}
 \end{frame}
 
-\section{Metodologia i Bloki}
+\section{Wyniki}
 
-\begin{frame}{Formatowanie Treści}
-    \begin{block}{Zwykły blok informacyjny}
-        Zawiera standardowe informacje lub definicje naukowe.
+\begin{frame}{Wyniki badań}
+    \begin{block}{Standardowy blok}
+        Treść opisu merytorycznego.
     \end{block}
 
-    \begin{alertblock}{Ważna uwaga / Wynik kluczowy}
-        Blok wyróżniony złotym kolorem UMW do zwrócenia uwagi na krytyczne dane.
+    \begin{alertblock}{Wyróżniony blok (złoty UMW)}
+        Kluczowa informacja lub wnioski z badań.
     \end{alertblock}
-
-    \begin{exampleblock}{Przykład}
-        Przykładowy przypadek kliniczny lub zastosowanie metody.
-    \end{exampleblock}
-\end{frame}
-
-\section{Podsumowanie}
-
-\begin{frame}{Podsumowanie}
-    \begin{center}
-        \Large \textbf{Dziękuję za uwagę!}
-        
-        \vspace{1cm}
-        
-        \small kontakt: imie.nazwisko@student.umw.edu.pl
-    \end{center}
 \end{frame}
 
 \end{document}

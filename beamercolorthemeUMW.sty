@@ -1,26 +1,99 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamercolorthemeUMW}[2026/10/10 Motyw kolorystyczny UMW]
+\ProvidesPackage{beamerthemeUMW}[2026/10/10 Motyw Beamera UMW w stylu AGH]
 
 \RequirePackage{xcolor}
+\RequirePackage{tikz}
 
+% --- Kolory UMW ---
 \definecolor{UMWGold}{HTML}{D0A53E}
-\definecolor{UMWNavy}{HTML}{2B2B5C}
-\definecolor{UMWBlack}{HTML}{000000}
+\definecolor{UMWBlack}{HTML}{1A1A1A}
 \definecolor{UMWGray}{HTML}{F4F4F4}
 
-\setbeamercolor{palette primary}{bg=UMWNavy, fg=white}
-\setbeamercolor{palette secondary}{bg=UMWGold, fg=black}
+\setbeamercolor{palette primary}{bg=UMWBlack, fg=white}
+\setbeamercolor{palette secondary}{bg=UMWGold, fg=UMWBlack}
 \setbeamercolor{palette tertiary}{bg=UMWBlack, fg=white}
 
-\setbeamercolor{titlelike}{parent=palette primary}
-\setbeamercolor{frametitle}{bg=UMWNavy, fg=UMWGold}
-\setbeamercolor{structure}{fg=UMWNavy}
+\setbeamercolor{structure}{fg=UMWBlack}
+\setbeamercolor{frametitle}{fg=UMWBlack}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{fg=white}
 
-\setbeamercolor{block title}{bg=UMWNavy, fg=white}
+\setbeamercolor{block title}{bg=UMWBlack, fg=white}
 \setbeamercolor{block body}{bg=UMWGray, fg=black}
-
 \setbeamercolor{block title alerted}{bg=UMWGold, fg=black}
 \setbeamercolor{block body alerted}{bg=UMWGray, fg=black}
 
-\setbeamercolor{block title example}{bg=UMWBlack, fg=white}
-\setbeamercolor{block body example}{bg=UMWGray, fg=black}
+\setbeamertemplate{background canvas}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[UMWGold] (current page.north west) rectangle ([xshift=0.35\paperwidth, yshift=-0.25cm]current page.north west);
+        \fill[UMWBlack] ([xshift=0.35\paperwidth]current page.north west) rectangle ([xshift=0.7\paperwidth, yshift=-0.25cm]current page.north west);
+        \fill[UMWGold] ([xshift=0.7\paperwidth]current page.north west) rectangle ([yshift=-0.25cm]current page.north east);
+        
+        \draw[line width=1.5pt, UMWGold] ([xshift=0.8cm]current page.north west) -- ([xshift=0.8cm]current page.south west);
+        \draw[line width=2.5pt, UMWBlack] ([xshift=1.1cm]current page.north west) -- ([xshift=1.1cm]current page.south west);
+    \end{tikzpicture}
+}
+
+\setbeamertemplate{title page}{
+    \vfill
+    \begin{center}
+        \ifx\inserttitlegraphic\@empty\else
+            \begin{tikzpicture}[remember picture, overlay]
+                \node[anchor=north west, inner sep=0pt] at ([xshift=1.5cm, yshift=-0.5cm]current page.north west) {
+                    \inserttitlegraphic
+                };
+            \end{tikzpicture}
+        \fi
+        
+        \vspace{1.6cm}
+        
+        \begin{tikzpicture}
+            \node[
+                fill=UMWBlack,
+                text=white,
+                rounded corners=6pt,
+                inner sep=12pt,
+                text width=0.68\paperwidth,
+                align=center
+            ] {
+                {\large \bfseries \inserttitle} \par
+                \ifx\insertsubtitle\@empty\else
+                    \vspace{0.2cm}
+                    {\small \insertsubtitle}
+                \fi
+            };
+        \end{tikzpicture}
+        
+        \vspace{0.5cm}
+        
+        {\bfseries \insertauthor} \par
+        \vspace{0.15cm}
+        {\footnotesize \insertinstitute} \par
+        \vspace{0.3cm}
+        {\small \insertdate}
+    \end{center}
+    \vfill
+}
+
+\setbeamertemplate{frametitle}{
+    \vspace{0.3cm}
+    \hspace{0.8cm}
+    \bfseries \insertframetitle
+    \par
+}
+
+\setbeamertemplate{footline}{
+    \leavevmode
+    \begin{beamercolorbox}[wd=0.333\paperwidth, ht=2.5ex, dp=1.125ex, center]{palette secondary}
+        \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=0.333\paperwidth, ht=2.5ex, dp=1.125ex, center]{palette primary}
+        \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=0.334\paperwidth, ht=2.5ex, dp=1.125ex, right]{palette secondary}
+        \usebeamerfont{date in head/foot}\insertshortdate \hspace*{2em}
+        \insertframenumber{} / \inserttotalframenumber \hspace*{2ex}
+    \end{beamercolorbox}
+}
+
+\mode<all>
